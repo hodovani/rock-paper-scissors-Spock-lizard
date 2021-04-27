@@ -76,6 +76,8 @@ window.onload = () => {
             case `${LIZARD}-${SCISSORS}`:
                 result = 'YOU WIN ☺️🥇 🤖💔'
                 break;
+            default:
+                result = 'SOMETHING WRONG. TRY AGAIN. 🐛'
         }
 
         output.innerHTML = result;
