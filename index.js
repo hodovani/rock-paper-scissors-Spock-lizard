@@ -2,29 +2,29 @@ function getComputerChoice() {
     return Math.floor((Math.random() * 5) + 1);
 }
 
+const ROCK = 'ROCK';
+const SCISSORS = 'SCISSORS';
+const PAPER = 'PAPER';
+const SPOCK = 'SPOCK';
+const LIZARD = 'LIZARD';
+const OPTIONS = {
+    1: ROCK,
+    2: SCISSORS,
+    3: PAPER,
+    4: SPOCK,
+    5: LIZARD
+};
+const OPTIONS2EMOJI = {
+    1: '⛰️',
+    2: '✂️',
+    3: '🧻',
+    4: '🖖',
+    5: '🦎'
+};
+
 let userChoiceID = '';
 
 window.onload = () => {
-    const ROCK = 'ROCK';
-    const SCISSORS = 'SCISSORS';
-    const PAPER = 'PAPER';
-    const SPOCK = 'SPOCK';
-    const LIZARD = 'LIZARD';
-    const OPTIONS = {
-        1: ROCK,
-        2: SCISSORS,
-        3: PAPER,
-        4: SPOCK,
-        5: LIZARD
-    };
-    const OPTIONS2EMOJI = {
-        1: '⛰️',
-        2: '✂️',
-        3: '🧻',
-        4: '🖖',
-        5: '🦎'
-    };
-
     const userOptions = document.querySelectorAll('.user-option');
 
     userOptions.forEach(el => el.addEventListener('click', event => {
@@ -33,7 +33,7 @@ window.onload = () => {
 
     const playButton = document.querySelector('#play');
 
-    playButton.addEventListener('click', event => {
+    playButton.addEventListener('click', () => {
         const computerChoiceID = getComputerChoice();
         const computerChoice = OPTIONS[computerChoiceID];
         const computerChoiceElement = document.querySelector('#computer-choice');
